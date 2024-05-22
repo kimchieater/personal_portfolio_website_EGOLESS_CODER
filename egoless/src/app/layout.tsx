@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-
+import { Montserrat } from 'next/font/google';
 import "./globals.css";
+import Nav from "./component/nav/page";
 
 
+
+
+const monserrat = Montserrat({
+  weight: ['300', '400', '700', '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Egoless Coding",
@@ -16,7 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-neutral-950">
+      <body className={monserrat.className}>
+        <Nav></Nav>
         {children}
         </body>
     </html>
