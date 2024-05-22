@@ -48,4 +48,14 @@ I also found out that after top-50% left-50% you need to translate x: -50% y:-50
 to center with position:absoulte 
 
 
+To start off picture mouse trail, I have downloaded 12 images.
+
+Now for optimisaiton, I'm going to use built in Image tag 
+
+https://nextjs.org/docs/pages/api-reference/components/image
+
+
+all you need to do is put images in your public folder.
+
+You also need to give it width and height
 
