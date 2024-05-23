@@ -1,6 +1,7 @@
 'use client'
 
 import { motion,  useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 
 
@@ -19,9 +20,10 @@ const Bridge = () => {
 
 
     return (
-    <section ref={targetRef} className="h-screen">
-
-
+    <section ref={targetRef} className="h-screen relative">
+        
+        
+        
     </section>
     )
 }

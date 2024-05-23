@@ -16,8 +16,8 @@ const Hero = () => {
     });
 
     const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
-
-
+    const translateX = useTransform(scrollYProgress, [0, 1], ["0px", "100%"])
+    const negativeTranslateX = useTransform(scrollYProgress, [0, 1], ["0px", "-400%"])
     // interface 
 
     interface MousePosition {
@@ -96,19 +96,24 @@ const Hero = () => {
     
 
     return (
-        <motion.div className="h-screen text-neutral-950" style={{opacity}} ref={targetRef} 
+        <motion.div className="h-screen text-neutral-950"  ref={targetRef} 
         >
             <div className="w-screen h-screen"  onMouseMove={handleMouseMove} >
-                <motion.div className="flex justify-center gap-5">
-                    
+                <motion.div className="flex justify-center gap-5" style={{opacity}}>
                     {images}
                 </motion.div>            
             </div>
             
-            <motion.h1 className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-[4rem] font-black z-1 bg-lime-300 px-2 py-1"
-             >
+            <motion.h1 className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] sm:text-[3rem] lg:text-[4rem] font-black z-1 bg-lime-300 px-2 py-1" style={{opacity}}
+            >
                 ADMWWWMDA
             </motion.h1>
+            <motion.div className="w-[700px] h-[700px] object-fill absolute bottom-[-300px] right-[-200px]" style={{translateX}}>
+            <Image src="/hero1.png" width="700" height="50" alt="" className="w-[auto] h-[auto] object-fill " ></Image>
+            </motion.div>
+            <motion.div  className="w-[700px] h-[700px] object-fill absolute bottom-0 left-[-400px]  scale-x-[-1] scale-y-[-1] z-[-20]" style={{translateX:negativeTranslateX, rotate:"180deg"}} >
+            <Image src="/hero2.png" width="700" height="50" alt="" className="w-[auto] h-[auto] object-fill" ></Image>
+            </motion.div>
         </motion.div>
     );
 };
