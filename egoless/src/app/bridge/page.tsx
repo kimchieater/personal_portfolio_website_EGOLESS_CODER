@@ -24,8 +24,8 @@ const Bridge = () => {
 
 
     return (
-    <section ref={targetRef} className="h-screen relative">
-        <motion.div style={{translateY: translateY, opacity, zIndex:"-20"}} className="absolute bottom-[-600px] left-[400px]">
+    <section ref={targetRef} className="h-screen relative mt-[400px]">
+        <motion.div style={{translateY: translateY, opacity, zIndex:"-20"}} className="fixed bottom-[-600px] left-[20%] ">
         <Image src="/hero3bg.png" alt="lol" width="1000" height="1000" 
         ></Image></motion.div>
         <motion.div className="absolute bottom-0 left-[-200px]" style={{translateX, opacity}}>
