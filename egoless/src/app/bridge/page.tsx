@@ -19,8 +19,8 @@ const Bridge = () => {
 
 
     return (
-    <section ref={targetRef}>
-        
+    <section ref={targetRef} className="h-screen">
+
 
     </section>
     )
