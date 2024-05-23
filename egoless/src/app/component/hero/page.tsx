@@ -17,7 +17,7 @@ const Hero = () => {
 
     const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
     const translateX = useTransform(scrollYProgress, [0, 1], ["0px", "100%"])
-    const negativeTranslateX = useTransform(scrollYProgress, [0, 1], ["0px", "-400%"])
+    const negativeTranslateX = useTransform(scrollYProgress, [0, 1], ["0px", "-100%"])
     // interface 
 
     interface MousePosition {
