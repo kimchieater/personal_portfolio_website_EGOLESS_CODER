@@ -11,7 +11,7 @@ const Hero = () => {
     const targetRef = useRef<HTMLDivElement>(null);
     const {scrollYProgress} = useScroll({
         target:targetRef,
-        offset:['start 50%', 'end center']
+        offset:['start start', 'end center']
         
     });
 
@@ -107,7 +107,7 @@ const Hero = () => {
             
             <motion.h1 className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-[4rem] font-black z-1 bg-lime-300 px-2 py-1"
              >
-                EGOLESS CODING
+                ADMWWWMDA
             </motion.h1>
         </motion.div>
     );
