@@ -3,11 +3,12 @@
 @import 'tailwindcss/utilities';
 
 
-.scrollBody {
-  width: 100vw;
-  position: fixed;
-  top: 0;
-
-  display: flex;
-  flex-direction: column;
+*,
+*::before,
+*::after {
+  line-height: 1.5;
+  letter-spacing: .2rem;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
