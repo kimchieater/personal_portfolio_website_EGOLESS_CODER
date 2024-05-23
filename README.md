@@ -85,6 +85,15 @@ So far This is what I created.
 
 I just wanted to see if the picture is following the mouse cursor.
 
-I created a function where it calculates the 
+I created a function where it calculates the coordinates of x axis, and y axis.
+
+Then my spawnImage function will return a div with image inside.
+
+![alt text](image-8.png)
+
+
+now... at least img1 will follow the cursor.
+
+hmmm now I need to create a function that stops after it renders an img. and moves on to next img.
 
 

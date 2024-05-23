@@ -1,89 +1,84 @@
 'use client'
-
-
-import { get } from 'http';
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 
 const Hero = () => {
+    // interface 
 
+    interface MousePosition {
+    x: number;
+    y: number;
+    }
+
+interface ImagePosition {
+    left: number;
+    top: number;
+    }
     //state
 
     //for mouse coordinates
-    let [mouse, setMouse] = useState({ x: 0, y: 0 });
-
+    let [mouse, setMouse] = useState<MousePosition>({ x: 0, y: 0 });
+    let [images, setImages] = useState<JSX.Element[]>([]);
     //image numbers 
-    let [imageNumber, setImageNumber] = useState(1);
+    let [imageNumber, setImageNumber] = useState<number>(1);
+    const [lastImagePos, setLastImagePos] = useState<ImagePosition>({ left: -100, top: -100 });
+    let [imagePos, setImagePos] = useState<ImagePosition>({ left:-100, top: -100});
 
-    let [picturePos, setPicturePos] = useState({ left:0, top: 0});
 
-    //timer before animation fadeOut happens
-    let [timer, setTimer] = useState(0);
 
-    //animation switch
-    let [fadeOut, setFadeOut] = useState(false);
-
-    
     //functions
 
 
-    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        //set Mouse cooringates
-        setMouse({ x: event.clientX, y: event.clientY });  
+    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>):void => {
+        //set Mouse coordinates
+        const newMousePos = { x: event.clientX, y: event.clientY };
+        setMouse(newMousePos);  
+        setImagePos({left: event.clientX, top: event.clientY});
 
-        setPicturePos({left: event.clientX, top: event.clientY});
+        const distance = Math.sqrt(
+            Math.pow(newMousePos.x - lastImagePos.left, 2) +
+            Math.pow(newMousePos.y - lastImagePos.top, 2)
+        );
+
+        if (distance > 100) {
+            setLastImagePos({ left: newMousePos.x, top: newMousePos.y });
+            spawnImage(newMousePos.x, newMousePos.y);
+        }
     };
 
-    const getImage = (): JSX.Element => {
-        return (
-        <div  style={
-            {
-                top: `${mouse.y}px`,
-                left: `${mouse.x}px`,   
-                position: "absolute", 
+    const spawnImage = (x:number, y:number): void => {
+        const newImage = (
+            <div key={imageNumber} style={{
+                top: `${y}px`,
+                left: `${x}px`,
+                position: "absolute",
                 maxWidth: "200px",
                 opacity: "1",
-                translate: "-50% -50%"
+                transform: "translate(-50%, -50%)",
+                
+            }}>
+                <Image src={`/image-${imageNumber}.avif`} alt={`image ${imageNumber}`} width={500} height={100} className={"object-cover"} />
+            </div>
+        );
+        setImages(prevImages => {
+            if (prevImages.length >= 36) {
+                return [newImage];
+            } else {
+                return [...prevImages, newImage];
             }
-        }>
-        <Image src={`/image-${imageNumber}.avif`} alt={`image ${imageNumber}`} width={500} height={100} className={"object-cover"} />
-        </div>
-        ) 
+        });
+        setImageNumber((prevNumber: number) => (prevNumber === 12 ? 1 : prevNumber + 1));
     };
     
-    //side effects
 
-            useEffect(()=>{
-        
-    
-    },);
-
-    
-    
-    
     return (
         <div className="h-screen bg-red-600 text-neutral-950">
             <div className="w-screen h-screen"  onMouseMove={handleMouseMove}>
                 <div className="flex justify-center gap-5">
                     <p>x : {mouse.x}</p>
                     <p>y : {mouse.y}</p>
-                    {
-                        getImage()
-                    }
-                </div>
-                {/* <Image src='/image-1.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-2.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-3.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-4.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-5.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-6.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-7.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-8.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-9.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-10.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-11.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" />
-                <Image src='/image-12.avif' alt="image1" width="500" height="100" className="max-w-[200px] absolute top-0 left-0 opacity-0" /> */}
-            
+                    {images}
+                </div>            
             </div>
             
             <h1 className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-[4rem] font-black z-1">
