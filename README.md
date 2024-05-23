@@ -59,3 +59,32 @@ all you need to do is put images in your public folder.
 
 You also need to give it width and height
 
+
+
+
+Mouse Image trail 
+
+
+I started off getting the coordinates of X-axis and Y-axis.
+
+![alt text](image-6.png)
+
+
+This is my pesuedo code.
+
+
+= every .5 second, I want pictures to pop out based on the cordinates.
+= If it reaches 12th element of the image, It goes back to 0 element.
+
+
+
+![alt text](image-7.png)
+
+
+So far This is what I created. 
+
+I just wanted to see if the picture is following the mouse cursor.
+
+I created a function where it calculates the 
+
+
