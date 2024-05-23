@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full  overflow-hidden">
-      <body className={`${monserrat.className} `}>
+    <html lang="en" className="!scroll-smooth">
+      <body className={`${monserrat.className} overflow-x-hidden bg-red-600 `}>
         <Nav></Nav>
         {children}
         </body>

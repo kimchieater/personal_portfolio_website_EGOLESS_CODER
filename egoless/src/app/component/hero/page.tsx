@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion';
+import { motion  } from 'framer-motion';
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react';
 
@@ -17,7 +17,7 @@ const Hero = () => {
     top: number;
     }
 
-
+    
     //state
 
     //for mouse coordinates
@@ -35,7 +35,7 @@ const Hero = () => {
 
     const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>):void => {
         //set Mouse coordinates
-        const newMousePos = { x: event.clientX, y: event.clientY };
+        const newMousePos = { x: event.clientX + window.scrollX, y: event.clientY + window.scrollY};
         setMouse(newMousePos);  
         setImagePos({left: event.clientX, top: event.clientY});
 
@@ -64,7 +64,7 @@ const Hero = () => {
                 maxWidth: "200px",
                 opacity: "1",
                 transform: "translate(-50%, -50%)",
-                
+                zIndex:-10,
             }}>
                 <Image src={`/image-${imageNumber}.avif`} alt={`image ${imageNumber}`} width={500} height={100} className={"object-cover"} />
             </motion.div>
@@ -76,31 +76,27 @@ const Hero = () => {
                 return [...prevImages, newImage];
             }
         });
-        setTimeout(() => {
-            const imageElement = document.getElementById(`image-${imageKey}`);
-            if (imageElement) {
-                imageElement.style.opacity = '0';
-                imageElement.style.transform = 'translate(-50%, -50%) scale(0.2)';
-            }
-        }, 500);
+        
 
         setImageNumber((prevNumber: number) => (prevNumber === 12 ? 1 : prevNumber + 1));
     };
     
 
     return (
-        <div className="h-screen bg-red-600 text-neutral-950">
+        <div className="h-screen text-neutral-950">
             <div className="w-screen h-screen"  onMouseMove={handleMouseMove}>
-                <div className="flex justify-center gap-5">
-                    <p>x : {mouse.x}</p>
-                    <p>y : {mouse.y}</p>
+                <motion.div className="flex justify-center gap-5">
+                    
                     {images}
-                </div>            
+                </motion.div>            
             </div>
             
-            <h1 className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-[4rem] font-black z-1 bg-lime-300 px-2 py-1">
+            <motion.h1 className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-[4rem] font-black z-1 bg-lime-300 px-2 py-1"
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
+            viewport={{margin:"-400px"}}>
                 EGOLESS CODING
-            </h1>
+            </motion.h1>
         </div>
     );
 };
