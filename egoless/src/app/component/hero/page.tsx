@@ -1,9 +1,22 @@
 'use client'
-import { motion  } from 'framer-motion';
+import { motion, useScroll, useTransform  } from 'framer-motion';
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react';
 
+
+
 const Hero = () => {
+
+    //Setting framer 
+    const targetRef = useRef<HTMLDivElement>(null);
+    const {scrollYProgress} = useScroll({
+        target:targetRef,
+        offset:['start 50%', 'end center']
+        
+    });
+
+    const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
+
 
     // interface 
 
@@ -83,8 +96,9 @@ const Hero = () => {
     
 
     return (
-        <div className="h-screen text-neutral-950">
-            <div className="w-screen h-screen"  onMouseMove={handleMouseMove}>
+        <motion.div className="h-screen text-neutral-950" style={{opacity}} ref={targetRef} 
+        >
+            <div className="w-screen h-screen"  onMouseMove={handleMouseMove} >
                 <motion.div className="flex justify-center gap-5">
                     
                     {images}
@@ -92,12 +106,10 @@ const Hero = () => {
             </div>
             
             <motion.h1 className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-[4rem] font-black z-1 bg-lime-300 px-2 py-1"
-            initial={{opacity:0}}
-            whileInView={{opacity:1}}
-            viewport={{margin:"-400px"}}>
+             >
                 EGOLESS CODING
             </motion.h1>
-        </div>
+        </motion.div>
     );
 };
 

@@ -7,11 +7,12 @@ import Bridge from "./bridge/page";
 
 
 
+
+
 export default function Home() {
   return (
     
     <main className="text-neutral-100">
-  
       <Hero/>
       <Bridge/>
       <MyWork/>

@@ -1,29 +1,28 @@
 'use client'
 
-import { motion, useInView, useScroll } from "framer-motion";
+import { motion,  useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 
 
 const Bridge = () => {
+    const targetRef = useRef<HTMLElement>(null);
 
-    const { scrollY } = useScroll()
-    const ref = useRef(null);
-    const isInView = useInView(ref, {
-        amount: "all",
-    })
+
+    const {scrollYProgress} = useScroll({
+        target: targetRef,
+        offset: ["start 67%", 'end 40%'],
+    });
+    const translateX = useTransform(scrollYProgress, [0, 1], ["0px", "400%"])
+    const translateY = useTransform(scrollYProgress, [0, 1], ["0px", "-400%"])
+    const rotate = useTransform(scrollYProgress, [0, 1], ["0deg", "360deg"])
+
 
     return (
-        <div className="h-screen mt-[100px]" ref={ref}>
-            <motion.div className="h-[100px] w-[100px] bg-black mt-1000 relative left-[50%]">
-            </motion.div>
-            
+    <section ref={targetRef}>
+        
 
-            <div className="relative top-0 left-0 bg-black h-[100px] w-1/3"></div>
-            <div className="relative top-0 left-0 bg-black h-[100px] w-2/3"></div>
-            <div className="relative top-0 left-0 bg-black h-[100px] w-3/3"></div>
-            
-        </div>
+    </section>
     )
 }
 
