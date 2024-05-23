@@ -109,10 +109,10 @@ const Hero = () => {
                 ADMWWWMDA
             </motion.h1>
             <motion.div className="w-[700px] h-[700px] object-fill absolute bottom-[-300px] right-[-200px]" style={{translateX}}>
-            <Image src="/hero1.png" width="700" height="50" alt="" className="w-[auto] h-[auto] object-fill " ></Image>
+            <Image src="/hero1.png" width="700" height="50" alt="" className="w-[600px] h-[auto] object-fill " ></Image>
             </motion.div>
             <motion.div  className="w-[700px] h-[700px] object-fill absolute bottom-0 left-[-400px]  scale-x-[-1] scale-y-[-1] z-[-20]" style={{translateX:negativeTranslateX, rotate:"180deg"}} >
-            <Image src="/hero2.png" width="700" height="50" alt="" className="w-[auto] h-[auto] object-fill" ></Image>
+            <Image src="/hero2.png" width="700" height="50" alt="" className="w-[400px] h-[auto] object-fill" ></Image>
             </motion.div>
         </motion.div>
     );
