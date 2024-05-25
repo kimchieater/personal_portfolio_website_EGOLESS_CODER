@@ -12,20 +12,20 @@ const Bridge = () => {
 
     const {scrollYProgress} = useScroll({
         target: targetRef,
-        offset: ["50% 50%", '100% start'],
+        offset: ["20% 50%", '100% start'],
     });
 
     const translateX = useTransform(scrollYProgress, [0, 1], ["0px", "200%"])
     const negativeTranslateX = useTransform(scrollYProgress, [0, 1], ["0px", "-200%"])
     const translateY = useTransform(scrollYProgress, [0, 1], ["0px", "-400%"])
-    const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.5])
+    const opacity = useTransform(scrollYProgress, [0, .8], [1, 0])
 
     const rotate = useTransform(scrollYProgress, [0, 1], ["0deg", "360deg"])
 
 
     return (
     <section ref={targetRef} className="h-screen relative mt-[400px] border-b-black border-b-[10px] shadow-2xl shadow-black/20">
-        <motion.div style={{translateY: translateY, opacity, zIndex:"-20"}} className="fixed bottom-[-600px] left-[20%] ">
+        <motion.div style={{translateY: translateY, opacity, zIndex:"-20"}} className="absolute bottom-[-600px] left-[20%] ">
         <Image src="/hero3bg.png" alt="lol" width="1000" height="1000" 
         ></Image></motion.div>
         <motion.div className="absolute bottom-0 left-[-200px]" style={{translateX, opacity}}>
