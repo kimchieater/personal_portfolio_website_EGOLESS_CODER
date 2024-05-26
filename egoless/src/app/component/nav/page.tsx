@@ -4,7 +4,13 @@ import Link from "next/link"
 
 const Nav = () => {
   return(
-    <div className="fixed flex justify-between z-10  font-light gap-10 w-[100%] px-10 py-5">
+    <div className="fixed hidden justify-between z-10  font-light gap-10 w-[100%] px-10 py-5 md:flex">
+      {/* hamburger drop down */}
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <Link href='/'  className="lg:text-[2rem] sm:text-[1rem] hover:underline transition-all duration-75 " id="/">HOME</Link>
       <Link href='#myWork'  className="lg:text-[2rem] sm:text-[1rem] ">MY WORK</Link>
       <Link href='#aboutMe'  className="lg:text-[2rem] sm:text-[1rem] ">ABOUT ME</Link>

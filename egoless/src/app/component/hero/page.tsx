@@ -54,7 +54,7 @@ const Hero = () => {
 
         const distance = Math.sqrt(
             Math.pow(newMousePos.x - lastImagePos.left, 2) +
-            Math.pow(newMousePos.y - lastImagePos.top, 2)
+            Math.pow(newMousePos.y - lastImagePos.top, 2 )
         );
 
         if (distance > 100) {
@@ -104,15 +104,15 @@ const Hero = () => {
                 </motion.div>            
             </div>
             
-            <motion.h1 className="fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] sm:text-[3rem] lg:text-[4rem] font-black z-1 bg-lime-300 px-2 py-1" style={{opacity}}
+            <motion.h1 className="fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] sm:text-[3rem] lg:text-[4rem] font-black z-10  bg-lime-300 px-2 py-1" style={{opacity}}
             >
                 ADMWWWMDA
             </motion.h1>
-            <motion.div className="w-[700px] h-[700px] object-fill fixed bottom-[-300px] right-[-100px]" style={{translateX}}>
-            <Image src="/hero1.png" width="700" height="50" alt="" className="w-[600px] h-[auto] object-fill " ></Image>
+            <motion.div className="w-[700px] h-[700px] object-fill fixed bottom-[-300px] right-[-200px] z-1" style={{translateX}} >
+            <Image src="/hero1.png" width="700" height="50" alt="right picture" className="w-[600px] h-[auto] object-fill " ></Image>
             </motion.div>
             <motion.div  className="w-[700px] h-[700px] object-fill fixed bottom-0 left-[-400px]  scale-x-[-1] scale-y-[-1] z-[-20]" style={{translateX:negativeTranslateX, rotate:"180deg"}} >
-            <Image src="/hero2.png" width="700" height="50" alt="" className="w-[400px] h-[auto] object-fill" ></Image>
+            <Image src="/hero2.png" width="700" height="50" alt="left picture" className="w-[400px] h-[auto] object-fill" ></Image>
             </motion.div>
         </motion.div>
     );
