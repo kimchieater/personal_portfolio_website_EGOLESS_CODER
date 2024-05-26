@@ -6,20 +6,20 @@ import { useRef } from "react";
 
 const MyWork = () =>{
 
-  const targetRef = useRef<HTMLElement>(null);
+  const targetRef = useRef<HTMLDivElement>(null);
   const {scrollYProgress} = useScroll({
         target:targetRef,
-        offset:['start start', 'end center']
+        offset:['start end', '80% end']
     });
 
-    
+    const background = useTransform(scrollYProgress, [0, 1], ["rgb(220 38 38)", "#000"])
   
   return(
-    <div id="myWork" className="h-screen w-full bg-red-600 border-[20px] border-lime-300 border-solid">
+    <motion.div id="myWork" className="h-screen w-full bg-red-600" ref={targetRef} style={{background}}>
       <div className="pt-[200px] overflow-x-scroll pr-[1000px] h-[100%]">
         <h1 className="pr-[10000px]">Project Title</h1>
       </div>
-    </div>
+    </motion.div>
   )
 }
 export default MyWork;
