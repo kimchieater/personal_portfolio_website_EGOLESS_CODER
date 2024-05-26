@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Cards from "../cards/page";
 
 
 
@@ -14,19 +15,11 @@ const InMy = () =>{
 
   })
 
-  const x = useTransform(scrollYProgress, [0, 1], ["130%", "-200%"])
+  const x = useTransform(scrollYProgress, [0, 1], ["135%", "-200%"])
 
   return(
-      <motion.div style={{x}} className="sticky py-10 top-0 flex items-center overflow-hidden gap-5">
-        <div className="w-[50%] h-[90vh] bg-white"></div>
-        <div className="w-[50%] h-[90vh] bg-white"></div>
-        <div className="w-[50%] h-[90vh] bg-white"></div>
-        <div className="w-[50%] h-[90vh] bg-white"></div>
-        <div className="w-[50%] h-[90vh] bg-white"></div>
-        <div className="w-[50%] h-[90vh] bg-white"></div>
-        
-        
-        
+      <motion.div style={{x}} className="sticky py-10 top-0 flex overflow-hidden gap-5 w-[4000px]">
+        <Cards></Cards>
       </motion.div>
   )
 }

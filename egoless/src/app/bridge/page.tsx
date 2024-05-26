@@ -24,9 +24,6 @@ const Bridge = () => {
 
     return (
     <section ref={targetRef} className="h-screen relative mt-[400px]shadow-2xl shadow-black/20">
-        <motion.div style={{translateY: translateY, opacity, zIndex:"-20"}} className="absolute bottom-[-600px] left-[20%] ">
-        <Image src="/hero3bg.png" alt="lol" width="1000" height="1000" 
-        ></Image></motion.div>
         <motion.div className="absolute bottom-0 left-[-200px]" style={{translateX, opacity}}>
         <Image src="/flowerjpeg1.png" alt="lol" width="400" height="1000"></Image></motion.div>
         <motion.div className="absolute bottom-0 right-[-100px]" style={{translateX:negativeTranslateX, opacity}}>
@@ -36,6 +33,7 @@ const Bridge = () => {
         <motion.div className="absolute bottom-[-200px] left-[-400px]" style={{translateX, opacity, zIndex:"-20"}}>
         <Image src="/flowerjpeg4.png" alt="lol" width="400" height="1000" ></Image>
         </motion.div>
+        
     </section>
     )
 }
