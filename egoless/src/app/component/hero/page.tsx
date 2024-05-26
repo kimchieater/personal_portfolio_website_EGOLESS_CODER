@@ -77,9 +77,9 @@ const Hero = () => {
                 maxWidth: "200px",
                 opacity: "1",
                 transform: "translate(-50%, -50%)",
-                zIndex:-10,
+                zIndex:1,
             }}>
-                <Image src={`/image-${imageNumber}.avif`} alt={`image ${imageNumber}`} width={500} height={100} className={"object-cover"} />
+                <Image src={`/image-${imageNumber}.avif`} alt={`image ${imageNumber}`} width={500} height={100} className={"object-cover"}  />
             </motion.div>
         );
         setImages(prevImages => {
@@ -96,9 +96,8 @@ const Hero = () => {
     
 
     return (
-        <motion.div className="h-screen text-neutral-950"  ref={targetRef} 
-        >
-            <div className="w-screen h-screen"  onMouseMove={handleMouseMove} >
+        <motion.div className="h-screen text-neutral-950 relative"  ref={targetRef}>
+            <div className="w-screen h-screen relative"  onMouseMove={handleMouseMove} >
                 <motion.div className="flex justify-center gap-5" style={{opacity}}>
                     {images}
                 </motion.div>            
@@ -108,11 +107,11 @@ const Hero = () => {
             >
                 ADMWWWMDA
             </motion.h1>
-            <motion.div className="w-[700px] h-[700px] object-fill fixed bottom-[-300px] right-[-200px] z-1" style={{translateX}} >
-            <Image src="/hero1.png" width="700" height="50" alt="right picture" className="w-[600px] h-[auto] object-fill " ></Image>
+            <motion.div className="w-[700px] h-[700px] object-fill fixed bottom-[-300px] right-[-200px] z-[-20]" style={{translateX}} >
+            <Image src="/hero1.png" width="700" height="50" alt="right picture" className=" z-[-20] w-[600px] h-[auto] object-fill " ></Image>
             </motion.div>
             <motion.div  className="w-[700px] h-[700px] object-fill fixed bottom-0 left-[-400px]  scale-x-[-1] scale-y-[-1] z-[-20]" style={{translateX:negativeTranslateX, rotate:"180deg"}} >
-            <Image src="/hero2.png" width="700" height="50" alt="left picture" className="w-[400px] h-[auto] object-fill" ></Image>
+            <Image src="/hero2.png" width="700" height="50" alt="left picture" className="w-[400px] h-[auto] object-fill z-[-20]" ></Image>
             </motion.div>
         </motion.div>
     );

@@ -6,11 +6,11 @@ const Nav = () => {
   return(
     <div>
       <div className=" fixed flex flex-col gap-2 justify-center mx-auto left-[50%] translate-x-[-50%] py-5 md:hidden">
-        <div className="w-[50px] h-[10px] bg-black"></div>
-        <div className="w-[50px] h-[10px] bg-black"></div>
-        <div className="w-[50px] h-[10px] bg-black"></div>
+        <div className="w-[50px] h-[10px] text-neutral-200"></div>
+        <div className="w-[50px] h-[10px] text-neutral-200"></div>
+        <div className="w-[50px] h-[10px] text-neutral-200"></div>
       </div>
-    <div className="fixed hidden justify-between z-10  font-light gap-10 w-[100%] px-10 py-5 md:flex">
+    <div className="fixed hidden justify-between z-10 font-light gap-10 w-[100%] px-10 py-5 md:flex text-neutral-200">
       {/* hamburger drop down */}
       
       <Link href='/'  className="lg:text-[2rem] sm:text-[1rem] hover:underline transition-all duration-75 " id="/">HOME</Link>

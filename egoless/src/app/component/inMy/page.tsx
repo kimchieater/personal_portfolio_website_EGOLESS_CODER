@@ -18,7 +18,7 @@ const InMy = () =>{
   const x = useTransform(scrollYProgress, [0, 1], ["135%", "-200%"])
 
   return(
-      <motion.div style={{x}} className="sticky py-10 top-0 flex overflow-hidden gap-5 w-[4000px]">
+      <motion.div style={{x}} className="sticky py-10 top-0 flex overflow-hidden gap-5 w-[2000px]">
         <Cards></Cards>
       </motion.div>
   )

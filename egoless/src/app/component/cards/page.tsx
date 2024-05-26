@@ -16,10 +16,10 @@ const Cards = () =>{
       {
         cardId.map((a,i)=>{
           return(
-            <motion.div key={i} className="h-[70vh] w-[200px] mt-20 bg-white cursor-pointer"
+            <motion.div key={i} className="h-[70vh] w-[200px] mt-20 bg-neutral-700 cursor-pointer"
             initial={{paddingRight: "0px"}}
             animate={{paddingRight: clickedCard === i ? "1000px": "0px"  }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1 }}
             onClick={() => handleClick(i)}>
             </motion.div>
           )
