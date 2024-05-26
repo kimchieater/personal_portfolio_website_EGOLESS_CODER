@@ -17,7 +17,7 @@ const MyWork = () =>{
 
   
   return(
-    <motion.div id="myWork" className="h-[400vh] w-full bg-red-600 relative" ref={targetRef} style={{background}}>
+    <motion.div id="myWork" className="h-[400vh] bg-red-600 relative" ref={targetRef} style={{background}}>
       <InMy></InMy>
     </motion.div>
   )
