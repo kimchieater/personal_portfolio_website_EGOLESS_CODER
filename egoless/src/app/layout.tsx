@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth overflow-x-hidden">
-      <body className={`${monserrat.className} bg-red-600 overflow-x-hidden`}>
+      <body className={`${monserrat.className} bg-red-600` }>
         <Nav></Nav>
         {children}
         </body>

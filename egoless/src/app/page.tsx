@@ -15,7 +15,7 @@ export default function Home() {
     <main className="text-neutral-100">
       <Hero/>
       <Bridge/>
-      <MyWork/>
+      <MyWork />
       <AboutMe/>
       <ContactMe/>
 
