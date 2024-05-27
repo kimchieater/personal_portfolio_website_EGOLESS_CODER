@@ -14,7 +14,7 @@ const BridgeInfo = () => {
 
     return (
 
-        <motion.div ref={scopeRef} className="text-left absolute bottom-[300px] left-[50%] translate-x-[-50%] h-[200px] text-neutral-300 text-[2.5rem] font-black flex flex-col sm:gap-5">
+        <motion.div ref={scopeRef} className="text-left absolute bottom-[300px] left-[50%] translate-x-[-50%] h-[500px] text-neutral-300 text-[2.5rem] font-black flex flex-col sm:gap-5">
           
             <motion.p 
             initial={{opacity:0, x:"-100px"}}
