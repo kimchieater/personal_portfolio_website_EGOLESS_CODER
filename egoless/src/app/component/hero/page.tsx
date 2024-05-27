@@ -103,10 +103,12 @@ const Hero = () => {
                 </motion.div>            
             </div>
             
-            <motion.h1 className="fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] sm:text-[3rem] lg:text-[4rem] font-black z-10  bg-lime-300 px-2 py-1" style={{opacity}}
+            <motion.div className=" font-black z-10  px-2 text-lime-300 py-1 fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] 2xl:text-[3rem] xl:text-[2.5rem] lg:text-[2rem] md:text-[1.5rem] sm:text-[1.2rem] text-[1rem]" style={{opacity}}
             >
-                ADMWWWMDA
-            </motion.h1>
+                <h1>Mathew 'Jason' Jeong</h1>
+                <p className="text-[.5rem] 2xl:text-[2.1rem] xl:text-[1.7rem] lg:text-[1.2rem] md:text-[.7rem] sm:text-[.6rem]">Web Developer, Nerd, Kimchi Eater</p>
+            </motion.div>
+            
             <motion.div className="w-[700px] h-[700px] object-fill fixed bottom-[-300px] right-[-200px] z-[-20]" style={{translateX}} >
             <Image src="/hero1.png" width="700" height="50" alt="right picture" className=" z-[-20] w-[600px] h-[auto] object-fill " ></Image>
             </motion.div>

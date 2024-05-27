@@ -9,14 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       screens:{
-        '2xs': '320px',
-        'xs': '375px',
+        'xs': '475px',
         'sm': '640px',
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
         '2xl': '1536px',
-        '50em': '50em',
+
       },
 
     },

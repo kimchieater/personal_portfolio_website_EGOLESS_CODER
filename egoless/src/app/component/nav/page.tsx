@@ -4,11 +4,11 @@ import Link from "next/link"
 
 const Nav = () => {
   return(
-    <div>
-      <div className=" fixed flex flex-col gap-2 justify-center mx-auto left-[50%] translate-x-[-50%] py-5 md:hidden">
-        <div className="w-[50px] h-[10px] text-neutral-200"></div>
-        <div className="w-[50px] h-[10px] text-neutral-200"></div>
-        <div className="w-[50px] h-[10px] text-neutral-200"></div>
+    <div className="relative">
+      <div className="fixed flex flex-col gap-3 cursor-pointer  z-[100] mx-auto left-[50%] translate-x-[-50%] md:hidden py-5">
+        <div className="w-[50px] h-[10px] bg-neutral-200 rounded-sm"></div>
+        <div className="w-[50px] h-[10px] bg-neutral-200 rounded-sm"></div>
+        <div className="w-[50px] h-[10px] bg-neutral-200 rounded-sm"></div>
       </div>
     <div className="fixed hidden justify-between z-10 font-light gap-10 w-[100%] px-10 py-5 md:flex text-neutral-200">
       {/* hamburger drop down */}

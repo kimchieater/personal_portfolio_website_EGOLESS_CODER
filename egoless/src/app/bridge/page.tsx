@@ -3,6 +3,7 @@
 import { motion,  useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import BridgeInfo from "./bridgeComponent/bridgeInfo/page";
 
 
 
@@ -33,7 +34,7 @@ const Bridge = () => {
         <motion.div className="absolute bottom-[-200px] left-[-400px]" style={{translateX, opacity, zIndex:"-20"}}>
         <Image src="/flowerjpeg4.png" alt="lol" width="400" height="1000" ></Image>
         </motion.div>
-        
+        <BridgeInfo></BridgeInfo>
     </section>
     )
 }
