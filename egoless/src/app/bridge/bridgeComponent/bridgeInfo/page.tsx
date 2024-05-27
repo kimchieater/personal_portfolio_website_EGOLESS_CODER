@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 
 
-
 const BridgeInfo = () => {
   const scopeRef= useRef<HTMLDivElement>(null);
 
@@ -14,12 +13,45 @@ const BridgeInfo = () => {
 });
 
     return (
-        <motion.div ref={scopeRef} className="text-left absolute bottom-[200px] left-[50%] translate-x-[-50%]  h-[400px] text-lime-300 2xl:text-[3rem] font-black">
+
+        <motion.div ref={scopeRef} className="text-left absolute bottom-[300px] left-[50%] translate-x-[-50%] h-[200px] text-neutral-300 text-[2.5rem] font-black flex flex-col sm:gap-5">
           
-            <p className="border">Developing UX/UI</p>
-            <p className="translate-x-[10%] border"> with Creative/Interactive Ideas</p>
-            <p className="translate-x-[20%] border">Making Dynamic websites</p>
-            <p className="translate-x-[30%] border"> Strive on, untiringly.</p>
+            <motion.p 
+            initial={{opacity:0, x:"-100px"}}
+            whileInView={{opacity:1, x:"-50px"}}
+            transition={{duration:2}}
+            viewport={{
+              margin:"-300px",
+              once:true
+            }}
+            ><span className="text-lime-300">Developing</span> UX/UI</motion.p>
+            <motion.p
+            initial={{opacity:0, x:"-50px"}} 
+            whileInView={{opacity:1, x:"0px"}}
+            transition={{duration:2}}
+            viewport={{
+              margin:"-300px",
+              once:true
+            }}
+            > with <span className="text-lime-300">Creative/Interactive</span> Ideas</motion.p>
+            <motion.p
+            initial={{opacity:0, x:"50px"}} 
+            whileInView={{opacity:1, x:"100px"}}
+            transition={{duration:2}}
+            viewport={{
+              margin:"-300px",
+              once:true
+            }}
+            >Making <span className="text-lime-300">Dynamic</span> websites</motion.p>
+            <motion.p 
+            initial={{opacity:0, x:"100px"}} 
+            whileInView={{opacity:1, x:"150px"}}
+            transition={{duration:2}}
+            viewport={{
+              margin:"-300px",
+              once:true
+            }}
+            > Strive on, <span className="text-lime-300">untiringly.</span></motion.p>
         </motion.div>
     )
 }

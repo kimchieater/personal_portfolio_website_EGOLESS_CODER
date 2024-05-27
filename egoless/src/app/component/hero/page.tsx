@@ -96,17 +96,17 @@ const Hero = () => {
     
 
     return (
-        <motion.div className="h-screen text-neutral-950 relative"  ref={targetRef}>
+        <motion.div className="h-screen text-neutral-950 relative "  ref={targetRef}>
             <div className="w-screen h-screen relative"  onMouseMove={handleMouseMove} >
                 <motion.div className="flex justify-center gap-5" style={{opacity}}>
                     {images}
                 </motion.div>            
             </div>
             
-            <motion.div className=" font-black z-10  px-2 text-lime-300 py-1 fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] 2xl:text-[3rem] xl:text-[2.5rem] lg:text-[2rem] md:text-[1.5rem] sm:text-[1.2rem] text-[1rem]" style={{opacity}}
+            <motion.div className=" font-black z-10  px-2 text-neutral-300 py-1 fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]  xl:text-[3rem] lg:text-[2rem] md:text-[2rem] sm:text-[1.5rem] text-[1.2rem]" style={{opacity}}
             >
-                <h1>Mathew Jason Jeong</h1>
-                <p className="text-[.5rem] 2xl:text-[2.1rem] xl:text-[1.7rem] lg:text-[1.2rem] md:text-[.7rem] sm:text-[.6rem]">Web Developer, Nerd, Kimchi Eater</p>
+                <h1>Mathew <span className='text-lime-300'>Jason</span> Jeong</h1>
+                <p className="text-[.8rem]  xl:text-[1.7rem] lg:text-[1.3rem] md:text-[1.2rem] sm:text-[1rem]">Web Developer, Nerd, <span className='text-lime-300'>Kimchi Eater</span></p>
             </motion.div>
             
             <motion.div className="w-[700px] h-[700px] object-fill fixed bottom-[-300px] right-[-200px] z-[-20]" style={{translateX}} >
