@@ -24,15 +24,15 @@ const Bridge = () => {
 
 
     return (
-    <section ref={targetRef} className="h-screen relative mt-[400px]shadow-2xl shadow-black/20">
-        <motion.div className="absolute bottom-0 left-[-200px]" style={{translateX, opacity}}>
-        <Image src="/flowerjpeg1.png" alt="lol" width="400" height="1000"></Image></motion.div>
-        <motion.div className="absolute bottom-0 right-[-100px]" style={{translateX:negativeTranslateX, opacity}}>
+    <section ref={targetRef} className="h-[120vh] z-[0] relative top-40 shadow-2xl shadow-black/20">
+        <motion.div className="absolute bottom-20 left-[-200px]" style={{translateX, opacity}}>
+        <Image src="/flowerjpeg1.png" alt="left-pic" width="400" height="1000"></Image></motion.div>
+        <motion.div className="absolute bottom-20 right-[-100px]" style={{translateX:negativeTranslateX, opacity}}>
         <Image src="/flowerjpeg2.png" alt="lol" width="400" height="1000"></Image></motion.div>
-        <motion.div className="absolute bottom-0 right-[-300px]" style={{translateX:negativeTranslateX, opacity}}>
+        <motion.div className="absolute bottom-20 right-[-300px]" style={{translateX:negativeTranslateX, opacity}}>
         <Image src="/flowerjpeg3.png" alt="lol" width="400" height="1000" ></Image></motion.div>
-        <motion.div className="absolute bottom-[-200px] left-[-400px]" style={{translateX, opacity, zIndex:"-20"}}>
-        <Image src="/flowerjpeg4.png" alt="lol" width="400" height="1000" ></Image>
+        <motion.div className="absolute bottom-20  left-[-400px]" style={{translateX, opacity, zIndex:"-20"}}>
+        <Image src="/flowerjpeg4.png" alt="left-pic-1" width="400" height="1000" ></Image>
         </motion.div>
         <BridgeInfo></BridgeInfo>
     </section>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from 'next/font/google';
 import "./globals.css";
 import Nav from "./component/nav/page";
-
+import MyWork from "./myWork/page";
 
 
 
@@ -14,7 +14,7 @@ const monserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Egoless Coding",
+  title: "Mathew Jason* Jeong",
   description: "I Make Stuff",
 };
 
@@ -25,8 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth overflow-x-hidden">
-      <body className={`${monserrat.className} bg-neutral-700 overflow-x-hidden`}>
+      <body className={`${monserrat.className} overflow-x-hidden bg-neutral-800 relative`}>
         <Nav></Nav>
+
         {children}
         </body>
     </html>

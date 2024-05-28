@@ -48,7 +48,7 @@ const Hero = () => {
 
     const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>):void => {
         //set Mouse coordinates
-        const newMousePos = { x: event.clientX + window.scrollX, y: event.clientY + window.scrollY};
+        const newMousePos = { x: (event.clientX -100) + window.scrollX, y: (event.clientY -100) + window.scrollY};
         setMouse(newMousePos);  
         setImagePos({left: event.clientX, top: event.clientY});
 
@@ -77,9 +77,9 @@ const Hero = () => {
                 maxWidth: "200px",
                 opacity: "1",
                 transform: "translate(-50%, -50%)",
-                zIndex:1,
+                
             }}>
-                <Image src={`/image-${imageNumber}.avif`} alt={`image ${imageNumber}`} width={500} height={100} className={"object-cover"}  />
+                <Image src={`/image-${imageNumber}.avif`} alt={`image ${imageNumber}`} width={500} height={100} className={"object-cover z-10"}  />
             </motion.div>
         );
         setImages(prevImages => {
@@ -96,7 +96,7 @@ const Hero = () => {
     
 
     return (
-        <motion.div className="h-screen text-neutral-950 relative "  ref={targetRef}>
+        <motion.div className="h-screen text-neutral-950 bg-neutral-500 -z-[20]"  ref={targetRef}>
             <div className="w-screen h-screen relative"  onMouseMove={handleMouseMove} >
                 <motion.div className="flex justify-center gap-5" style={{opacity}}>
                     {images}
@@ -109,11 +109,11 @@ const Hero = () => {
                 <p className="text-[.8rem]  xl:text-[1.7rem] lg:text-[1.3rem] md:text-[1.2rem] sm:text-[1rem]">Web Developer, Nerd, <span className='text-lime-300'>Kimchi Eater</span></p>
             </motion.div>
             
-            <motion.div className="w-[700px] h-[700px] object-fill fixed bottom-[-300px] right-[-200px] z-[-20]" style={{translateX}} >
+            <motion.div className="w-[700px] h-[700px] object-fill fixed bottom-[-300px] right-[-200px] z-[0]" style={{translateX, opacity}} >
             <Image src="/hero1.png" width="700" height="50" alt="right picture" className=" z-[-20] w-[600px] h-[auto] object-fill " ></Image>
             </motion.div>
-            <motion.div  className="w-[700px] h-[700px] object-fill fixed bottom-0 left-[-400px]  scale-x-[-1] scale-y-[-1] z-[-20]" style={{translateX:negativeTranslateX, rotate:"180deg"}} >
-            <Image src="/hero2.png" width="700" height="50" alt="left picture" className="w-[400px] h-[auto] object-fill z-[-20]" ></Image>
+            <motion.div  className="w-[700px] h-[700px] object-fill fixed bottom-0 left-[-400px]  scale-x-[-1] scale-y-[-1] z-[0]" style={{translateX:negativeTranslateX, rotate:"180deg"}} >
+            <Image src="/hero2.png" width="700" height="50" alt="left picture" className="w-[400px] h-[auto] object-fill " ></Image>
             </motion.div>
         </motion.div>
     );
