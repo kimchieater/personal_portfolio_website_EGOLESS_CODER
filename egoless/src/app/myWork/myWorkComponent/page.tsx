@@ -45,7 +45,7 @@ const MyWorkComponent = () =>{
           >
             
             <p>
-              Coding Chronicles is a journal created with Next.js, TailwindCSS, TypeScript, and Sanity. It features a crafted UI design and database connectivity. Leveraging Sanity for data fetching and TypeScript for reliability, this project showcases a developer's journey, blending technical skill with design for an engaging user experience.
+              Coding Chronicles is a journal created with Next.js, TailwindCSS, TypeScript, and Sanity. It features a crafted UI design and database connectivity. Leveraging Sanity for data fetching and TypeScript for reliability, this project showcases a journey, blending technical skill with design for an engaging user experience.
             </p>
           
           </motion.div>
