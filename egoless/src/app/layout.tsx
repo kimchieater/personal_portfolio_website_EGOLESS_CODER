@@ -27,7 +27,6 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth overflow-x-hidden">
       <body className={`${monserrat.className} overflow-x-hidden bg-neutral-800 relative`}>
         <Nav></Nav>
-
         {children}
         </body>
     </html>

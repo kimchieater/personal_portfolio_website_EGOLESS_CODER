@@ -26,6 +26,7 @@ const BridgeInfo = () => {
               margin:"-100px",
               once:true
             }}
+            
             ><span className="text-lime-300">Developing</span> UX/UI</motion.p>
             <motion.p
             className="text-[.7rem] xl:text-[1.7rem] lg:text-[1.3rem] md:text-[1.2rem] sm:text-[1rem]"

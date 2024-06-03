@@ -17,7 +17,7 @@ const MyWorkComponent = () =>{
 
 
   return (
-        <div className="h-[100%]  flex flex-col lg:flex-row flex-wrap gap-5 items-center justify-center">
+        <div className=" flex flex-col lg:flex-row flex-wrap gap-5 items-center justify-center">
           <div className="hidden md:block bg-lime-300 h-[2px] w-[100%] left-[50%] translate-x-[-%50]"></div>
           <div className="flex-1 flex flex-col gap-5">
             <motion.div className="flex-1"

@@ -1,9 +1,11 @@
+import AboutMeInfo from "../component/aboutMeInfo/page";
+
 
 
 const AboutMe = () =>{
   return(
-    <div id="aboutMe" className="h-screen">
-      About section
+    <div id="aboutMe" className="flex justify-center items-center h-[200vh]">
+      <AboutMeInfo></AboutMeInfo>
     </div>
   )
 }
