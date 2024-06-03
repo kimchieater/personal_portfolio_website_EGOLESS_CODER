@@ -46,7 +46,7 @@ const AboutMeInfo = ()=>{
         }}
         transition={{duration:1}}
         
-        className=" py-2 px-4 z-10 text-[1rem] font-bold"><span>Hello</span> I'm just a <span className="text-lime-400">programmer</span> who likes eating <span className="text-lime-400">Kimchi</span></motion.div>
+        className=" py-2 px-4 z-10 text-[1rem] font-bold"><span>Hello</span>Just a <span className="text-lime-400">programmer</span> who likes eating <span className="text-lime-400">Kimchi</span></motion.div>
         <motion.div
         style={{opacity:0, x:"-100px"}}
         whileInView={{opacity:1, x:"0px"}}
