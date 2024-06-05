@@ -1,4 +1,6 @@
+import { motion, useScroll } from 'framer-motion';
 import React from 'react';
+
 
 
 const ContactMe = () => {
@@ -14,7 +16,7 @@ export default ContactMe;
 
 const ContactTable = ()=>{
   return(
-    <div className=" h-[80%] w-[80%] flex flex-col justify-center items-center gap-5">
+    <motion.div className=" h-[80%] w-[80%] flex flex-col justify-center items-center gap-5">
 
       
     <div className="flex flex-col items-center justify-center p-5">
@@ -51,6 +53,6 @@ const ContactTable = ()=>{
 
     </div>
       
-    </div>
+    </motion.div>
   )
 }
