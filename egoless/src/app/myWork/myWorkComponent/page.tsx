@@ -17,8 +17,8 @@ const MyWorkComponent = () =>{
 
 
   return (
-        <div className=" flex flex-col lg:flex-row flex-wrap gap-5 items-center justify-center">
-          <div className="hidden md:block bg-lime-300 h-[2px] w-[100%] left-[50%] translate-x-[-%50]"></div>
+        <div className=" flex flex-col  gap-5 items-center justify-center h-[90%] max-h-[90%]">
+
           <div className="flex-1 flex flex-col gap-5">
             <motion.div className="flex-1"
             initial={{opacity:0, x:"-100px"}}
@@ -44,7 +44,7 @@ const MyWorkComponent = () =>{
             }}
           >
             
-            <p>
+            <p className="text-[.6rem] xs:text-[1rem]">
               Coding Chronicles is a journal created with Next.js, TailwindCSS, TypeScript, and Sanity. It features a crafted UI design and database connectivity. Leveraging Sanity for data fetching and TypeScript for reliability, this project showcases a journey, blending technical skill with design for an engaging user experience.
             </p>
           

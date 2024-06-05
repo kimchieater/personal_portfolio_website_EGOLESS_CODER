@@ -19,10 +19,10 @@ const MyWork = () =>{
     const background = useTransform(scrollYProgress, [0, 1], ["#262626", "#737373"])
 
   return(
-    <motion.div id="myWork" className=" relative bg-neutral-500 z-[10] rounded-xl pt-20 p-20 text-neutral-200" ref={targetRef} style={{background}}>
-      <motion.div>
+    <motion.div id="myWork" className=" relative h-screen bg-neutral-500 z-[10] rounded-xl pt-20 p-20 text-neutral-200 flex justify-center items-center" ref={targetRef} style={{background}}>
+      
       <MyWorkComponent></MyWorkComponent>
-      </motion.div>
+      
     </motion.div>
   )
 }

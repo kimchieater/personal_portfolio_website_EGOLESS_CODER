@@ -31,7 +31,7 @@ export default function Home() {
     <main ref={targetRef}>
       <Hero/>
       <Bridge/>
-      <div className="bg-natural-400">
+      <div className="bg-natural-400 h-screen">
       <motion.div 
       initial={{y:"400px"}}
       animate={{y:"0"}}
