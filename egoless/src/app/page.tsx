@@ -41,7 +41,7 @@ export default function Home() {
       </div>
       <AboutMe/>
       <ContactMe/>
-      
+      <p className="text-center bg-neutral-500 text-neutral-200">All rights reserved Mathew Jason Jeong @ 2024</p>
     </main>
     
   );

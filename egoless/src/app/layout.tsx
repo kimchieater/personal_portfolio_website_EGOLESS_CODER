@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={`${monserrat.className} overflow-x-hidden bg-neutral-800 relative`}>
         <Nav></Nav>
         {children}
-        <p className="text-center bg-neutral-500 text-neutral-200">All rights reserved Mathew Jason Jeong @ 2024</p>
+        
         </body>
     </html>
   );
